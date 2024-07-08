@@ -1,8 +1,10 @@
 provider "aws" {
   region = "us-east-1"
-  access_key = "AKIAWLH2FHIU4576D4PU"
-  secret_key = "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"
+  access_key = var.aws_access_key
+  secret_key = var.aws_secret_key
 }
+
+variable "aws_access_key" {}
 
 resource "aws_instance" "rhel9" {
   ami           = "ami-08a9e811ec80449b9" # Replace with your RHEL 8.10 AMI ID
